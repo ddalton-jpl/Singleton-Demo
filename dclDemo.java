@@ -29,6 +29,9 @@ class SingletonDcl {
     }
 
     // get instance of obj
+    // DCL avoids the use of a delay to seperate calls to uniqueInstance
+    // check if the object is null twice
+    // syncs both objects then checks again
     public static SingletonDcl getInstance() {
         if (uniqueInstance == null) {
             synchronized(SingletonDcl.class) {
